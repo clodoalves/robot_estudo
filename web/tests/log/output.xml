@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.8.5 on win32)" generated="20200730 10:48:58.114" rpa="false">
+<suite id="s1" name="formularioComKeyWords" source="c:\Users\tafc\Desktop\Estudo Robot\robot\web\tests\formularioComKeyWords.robot">
+<test id="s1-t1" name="Fazer login com sucesso pegando os campos de input pelo name e o botão pela class">
+<kw name="Nova sessão" library="base" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${navegador}</arg>
+</arguments>
+<msg timestamp="20200730 10:48:58.498" level="INFO">Opening browser 'chrome' to base url 'https://training-wheels-protocol.herokuapp.com'.</msg>
+<status status="PASS" starttime="20200730 10:48:58.498" endtime="20200730 10:49:05.106"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200730 10:49:05.106" endtime="20200730 10:49:07.252"></status>
+</kw>
+<status status="PASS" starttime="20200730 10:48:58.497" endtime="20200730 10:49:07.252"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${url}/login</arg>
+</arguments>
+<msg timestamp="20200730 10:49:07.254" level="INFO">Opening url 'https://training-wheels-protocol.herokuapp.com/login'</msg>
+<status status="PASS" starttime="20200730 10:49:07.253" endtime="20200730 10:49:07.784"></status>
+</kw>
+<kw name="Login With">
+<arguments>
+<arg>stark</arg>
+<arg>jarvis!</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${input_name_username}</arg>
+<arg>${user}</arg>
+</arguments>
+<msg timestamp="20200730 10:49:07.786" level="INFO">Typing text 'stark' into text field 'css:input[name=username]'.</msg>
+<status status="PASS" starttime="20200730 10:49:07.785" endtime="20200730 10:49:07.988"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${input_name_password}</arg>
+<arg>${pass}</arg>
+</arguments>
+<msg timestamp="20200730 10:49:07.990" level="INFO">Typing text 'jarvis!' into text field 'css:input[name=password]'.</msg>
+<status status="PASS" starttime="20200730 10:49:07.989" endtime="20200730 10:49:08.139"></status>
+</kw>
+<status status="PASS" starttime="20200730 10:49:07.784" endtime="20200730 10:49:08.139"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20200730 10:49:10.156" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200730 10:49:08.140" endtime="20200730 10:49:10.156"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${click_button_login}</arg>
+</arguments>
+<msg timestamp="20200730 10:49:10.157" level="INFO">Clicking element 'class:btn-login'.</msg>
+<status status="PASS" starttime="20200730 10:49:10.157" endtime="20200730 10:49:10.726"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20200730 10:49:12.740" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200730 10:49:10.728" endtime="20200730 10:49:12.740"></status>
+</kw>
+<kw name="Should See logged User">
+<arguments>
+<arg>Tony Starkk</arg>
+</arguments>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Olá, ${full_name}.</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200730 10:49:13.154" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-68.png"&gt;&lt;img src="selenium-screenshot-68.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200730 10:49:12.791" endtime="20200730 10:49:13.154"></status>
+</kw>
+<msg timestamp="20200730 10:49:13.161" level="FAIL">Page should have contained text 'Olá, Tony Starkk.' but did not.</msg>
+<status status="FAIL" starttime="20200730 10:49:12.742" endtime="20200730 10:49:13.161"></status>
+</kw>
+<status status="FAIL" starttime="20200730 10:49:12.741" endtime="20200730 10:49:13.161"></status>
+</kw>
+<kw name="Encerra sessão" library="base" type="teardown">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200730 10:49:13.502" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-69.png"&gt;&lt;img src="selenium-screenshot-69.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200730 10:49:13.163" endtime="20200730 10:49:13.502"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200730 10:49:13.502" endtime="20200730 10:49:15.893"></status>
+</kw>
+<status status="PASS" starttime="20200730 10:49:13.162" endtime="20200730 10:49:15.894"></status>
+</kw>
+<tags>
+<tag>loginSucesso</tag>
+</tags>
+<status status="FAIL" starttime="20200730 10:48:58.495" endtime="20200730 10:49:15.894" critical="yes">Page should have contained text 'Olá, Tony Starkk.' but did not.</status>
+</test>
+<status status="FAIL" starttime="20200730 10:48:58.120" endtime="20200730 10:49:15.898"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1">loginSucesso</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="formularioComKeyWords">formularioComKeyWords</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
